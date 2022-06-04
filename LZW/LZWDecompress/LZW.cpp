@@ -124,12 +124,17 @@ public:
 
 /*--------------------------Get File Names -----------------------------------------*/
 
-	void GetFileNames()
+    void GetFileNames(const char *read, const char *write)
 	{
+        strcpy(readFile, read);
+        strcpy(writeFile, write);
+
+        /*
 		cout<<"\n Enter File Name To UnZip = ";
 		cin>>readFile;
 		cout<<"\n Enter Name Of UnZipped File = ";
 		cin>>writeFile;
+         */
 	}// end of function
 	
 /*--------------------------Open File for Reading-----------------------------------------*/

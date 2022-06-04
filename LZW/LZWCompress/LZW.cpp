@@ -116,12 +116,18 @@ public:
 
 /*--------------------------Get File Names -----------------------------------------*/
 
-	void GetFileNames()
+	void GetFileNames(const char *read, const char *write)
 	{
+
+        strcpy(readFile, read);
+        strcpy(writeFile, write);
+
+        /*
 		cout<<"\n Enter File Name To Zip = ";
 		cin>>readFile;
 		cout<<"\n Enter Name Of Zipped File = ";
 		cin>>writeFile;
+         */
 	}// end of function
 	
 /*--------------------------Open File for Reading-----------------------------------------*/
@@ -130,7 +136,7 @@ public:
 	void OpenFiles()
 	{
 		if((getPtr=fopen(readFile,"rb"))==NULL)
-		{  
+		{
 			cout<<"\n Unable To Open File="<<readFile;
 		    exit(1);          
 		}

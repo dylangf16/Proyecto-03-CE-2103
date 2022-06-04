@@ -5,7 +5,7 @@
 #include "LZW/LZWDecompress//LZW.cpp"
 
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     /*
     //                                             Ejecución de Huffman
     cout << "inputs dados" << endl;
@@ -20,28 +20,33 @@ int main(int argc, char* argv[]) {
     }
     cout << "comprimiendo" << endl;
     map<unsigned char, string> codes;
+    //Huffman Compresión
     compressFile(Path1, Path2, codes);
+    //HUffman Descompresión
     decompressFile(Path2, Path3);
 
     cout << "terminado" << endl;
      *///------------------------------------------------------------------------------------------------------------------------------------
 
     //                                             Ejecución de LZW
-   //LZW COMPRESIÓN
-   LZWCompression compressFile;
-   compressFile.GetFileNames();
-   compressFile.OpenFiles();
-   compressFile.ReadBytesFromFile();
-   compressFile.closepointers();
+    //LZW COMPRESIÓN
+    LZWCompression compressFile;
+    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/PorComprimir/The_Clone_Wars_Logo_Bleu.jpg";
+    std::string Path2 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Comprimido/The_Clone_Wars_Logo_Bleu.jpg";
+    compressFile.GetFileNames(Path1.c_str(), Path2.c_str());
+    compressFile.OpenFiles();
+    compressFile.ReadBytesFromFile();
+    compressFile.closepointers();
 
-   //LZW DECOMPRESIÓN
-   LZWDeCompression decompressFile;
-   decompressFile.GetFileNames();
-   decompressFile.OpenFiles();
-   decompressFile.ReadBytesFromFile();
-   decompressFile.closepointers();
+    //LZW DECOMPRESIÓN
+    std::string Path3 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Descomprimido/The_Clone_Wars_Logo_Bleu.jpg";
+    LZWDeCompression decompressFile;
+    decompressFile.GetFileNames(Path2.c_str(), Path3.c_str());
+    decompressFile.OpenFiles();
+    decompressFile.ReadBytesFromFile();
+    decompressFile.closepointers();
 
-   return 0;
+    return 0;
 }
 
 
