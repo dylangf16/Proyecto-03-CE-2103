@@ -55,11 +55,23 @@ build CMakeFiles/Proyecto_03_CE_2103.dir/main.cpp.o: CXX_COMPILER__Proyecto_03_C
   OBJECT_DIR = CMakeFiles/Proyecto_03_CE_2103.dir
   OBJECT_FILE_DIR = CMakeFiles/Proyecto_03_CE_2103.dir
 
-build CMakeFiles/Proyecto_03_CE_2103.dir/Huffman_Algorithm.cpp.o: CXX_COMPILER__Proyecto_03_CE_2103_Debug /home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Huffman_Algorithm.cpp || cmake_object_order_depends_target_Proyecto_03_CE_2103
-  DEP_FILE = CMakeFiles/Proyecto_03_CE_2103.dir/Huffman_Algorithm.cpp.o.d
+build CMakeFiles/Proyecto_03_CE_2103.dir/Huffman/Huffman_Algorithm.cpp.o: CXX_COMPILER__Proyecto_03_CE_2103_Debug /home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Huffman/Huffman_Algorithm.cpp || cmake_object_order_depends_target_Proyecto_03_CE_2103
+  DEP_FILE = CMakeFiles/Proyecto_03_CE_2103.dir/Huffman/Huffman_Algorithm.cpp.o.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Proyecto_03_CE_2103.dir
-  OBJECT_FILE_DIR = CMakeFiles/Proyecto_03_CE_2103.dir
+  OBJECT_FILE_DIR = CMakeFiles/Proyecto_03_CE_2103.dir/Huffman
+
+build CMakeFiles/Proyecto_03_CE_2103.dir/LZ77/LZ77_Algorithm.cpp.o: CXX_COMPILER__Proyecto_03_CE_2103_Debug /home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/LZ77/LZ77_Algorithm.cpp || cmake_object_order_depends_target_Proyecto_03_CE_2103
+  DEP_FILE = CMakeFiles/Proyecto_03_CE_2103.dir/LZ77/LZ77_Algorithm.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Proyecto_03_CE_2103.dir
+  OBJECT_FILE_DIR = CMakeFiles/Proyecto_03_CE_2103.dir/LZ77
+
+build CMakeFiles/Proyecto_03_CE_2103.dir/LZ78/LZ78_Algorithm.cpp.o: CXX_COMPILER__Proyecto_03_CE_2103_Debug /home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/LZ78/LZ78_Algorithm.cpp || cmake_object_order_depends_target_Proyecto_03_CE_2103
+  DEP_FILE = CMakeFiles/Proyecto_03_CE_2103.dir/LZ78/LZ78_Algorithm.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Proyecto_03_CE_2103.dir
+  OBJECT_FILE_DIR = CMakeFiles/Proyecto_03_CE_2103.dir/LZ78
 
 
 # =============================================================================
@@ -69,7 +81,7 @@ build CMakeFiles/Proyecto_03_CE_2103.dir/Huffman_Algorithm.cpp.o: CXX_COMPILER__
 #############################################
 # Link the executable Proyecto_03_CE_2103
 
-build Proyecto_03_CE_2103: CXX_EXECUTABLE_LINKER__Proyecto_03_CE_2103_Debug CMakeFiles/Proyecto_03_CE_2103.dir/main.cpp.o CMakeFiles/Proyecto_03_CE_2103.dir/Huffman_Algorithm.cpp.o
+build Proyecto_03_CE_2103: CXX_EXECUTABLE_LINKER__Proyecto_03_CE_2103_Debug CMakeFiles/Proyecto_03_CE_2103.dir/main.cpp.o CMakeFiles/Proyecto_03_CE_2103.dir/Huffman/Huffman_Algorithm.cpp.o CMakeFiles/Proyecto_03_CE_2103.dir/LZ77/LZ77_Algorithm.cpp.o CMakeFiles/Proyecto_03_CE_2103.dir/LZ78/LZ78_Algorithm.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Proyecto_03_CE_2103.dir
   POST_BUILD = :
