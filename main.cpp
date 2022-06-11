@@ -53,6 +53,7 @@ int main(int argc, char *argv[]) {
     decompressFile.OpenFiles();
     decompressFile.ReadBytesFromFile();
     decompressFile.closepointers();
+
      */
     //------------------------------------------------------------------------------------------------------------------------------------
     //                                             Ejecución de LZ78
@@ -71,7 +72,6 @@ int main(int argc, char *argv[]) {
     fname_out = const_cast<char *>(Path3.c_str());
     decompress(fname_in,fname_out);
     cout << "Final de compresión" << endl;
-
 
 
 
