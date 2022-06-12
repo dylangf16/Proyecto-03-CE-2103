@@ -7,7 +7,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+using namespace std;
 
 int ImageToBinary(std::string input, std::string output);
+int BinaryToImage(std::string input, std::string output);
 
 #endif //PROYECTO_03_CE_2103_FILETOBINARY_H

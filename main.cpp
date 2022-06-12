@@ -92,16 +92,16 @@ int main(int argc, char *argv[]) {
     //                                             Ejecución de LZ77
 
 
-    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/PorComprimir/The_Clone_Wars_Logo_Bleu.jpg";
+    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/PorComprimir/BGmusic.mp3";
     std::string Path2 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Comprimido/The_Clone_Wars_Logo_Bleu.txt";
     std::string Path3 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Descomprimido/The_Clone_Wars_Logo_Bleu.txt";
-    std::string Path4 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Archivo Binario/The_Clone_Wars_Logo_Bleu.txt";
-    std::string Path5 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Descomprimido/The_Clone_Wars_Logo_Bleu.jpg";
+    std::string Path4 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Archivo Binario/BGmusic.txt";
+    std::string Path5 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Descomprimido/BGmusic.mp3";
 
 
     ImageToBinary(Path1, Path4);
 
-
+    /*
     LZ77 *lz77 = new LZ77();
 
     cout << "Inicio de compresión LZ77" << endl;
@@ -111,8 +111,10 @@ int main(int argc, char *argv[]) {
     cout << "Inicio de descompresión LZ77" << endl;
     lz77->decompress_file(Path2, Path3);
     cout << "Finalización de descompresión LZ77" << endl;
+     */
 
-    ImageToBinary(Path3,Path5);
+    BinaryToImage(Path4,Path5);
+
 
 
     return 0;
