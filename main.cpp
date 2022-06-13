@@ -12,13 +12,13 @@ int main(int argc, char *argv[]) {
     //Reccorido: 1 -> 4 / 4 -> 2 / 2 -> 3 / 3 -> 5
 
     //                                             Ejecución de Huffman
-
+/*
     cout << "inputs dados" << endl;
-    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/PorComprimir/index.jpeg";
-    std::string Path2 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Comprimido/index.jpeg";
-    std::string Path3 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Descomprimido/index.jpeg";
-    std::string Path4 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Archivo Binario/index.txt";
-    std::string Path5 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Descomprimido/index.jpeg";
+    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/1.PorComprimir/The_Clone_Wars_Logo_Bleu.jpg";
+    std::string Path2 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/3.Comprimido/The_Clone_Wars_Logo_Bleu.txt";
+    std::string Path3 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/4.Descomprimido/The_Clone_Wars_Logo_Bleu.jpg";
+    std::string Path4 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/2.Archivo Binario/The_Clone_Wars_Logo_Bleu.txt";
+    std::string Path5 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/4.Descomprimido/The_Clone_Wars_Logo_Bleu.txt";
 
     ImageToBinary(Path1, Path4);
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 
     BinaryToImage(Path3,Path5);
     cout << "terminado" << endl;
-
+*/
 
     //------------------------------------------------------------------------------------------------------------------------------------
 
@@ -49,31 +49,38 @@ int main(int argc, char *argv[]) {
     //LZW COMPRESIÓN
     /*
     LZWCompression compressFile;
-    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/PorComprimir/The_Clone_Wars_Logo_Bleu.jpg";
-    std::string Path2 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Comprimido/The_Clone_Wars_Logo_Bleu.jpg";
-    compressFile.GetFileNames(Path1.c_str(), Path2.c_str());
+    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/1.PorComprimir/The_Clone_Wars_Logo_Bleu.jpg";
+    std::string Path2 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/3.Comprimido/The_Clone_Wars_Logo_Bleu.txt";
+    std::string Path3 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/4.Descomprimido/The_Clone_Wars_Logo_Bleu.jpg";
+    std::string Path4 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/2.Archivo Binario/The_Clone_Wars_Logo_Bleu.txt";
+    std::string Path5 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/4.Descomprimido/The_Clone_Wars_Logo_Bleu.txt";
+    ImageToBinary(Path1, Path4);
+    compressFile.GetFileNames(Path4.c_str(), Path2.c_str());
     compressFile.OpenFiles();
     compressFile.ReadBytesFromFile();
     compressFile.closepointers();
 
     //LZW DECOMPRESIÓN
-    std::string Path3 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Descomprimido/The_Clone_Wars_Logo_Bleu.jpg";
     LZWDeCompression decompressFile;
     decompressFile.GetFileNames(Path2.c_str(), Path3.c_str());
     decompressFile.OpenFiles();
     decompressFile.ReadBytesFromFile();
     decompressFile.closepointers();
 
-     */
+    BinaryToImage(Path3,Path5);
+    cout << "terminado" << endl;
+
+    */
     //------------------------------------------------------------------------------------------------------------------------------------
     //                                             Ejecución de LZ78
 
     /*
     cout << "Comprimiendo" << endl;
-    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/PorComprimir/The_Clone_Wars_Logo_Bleu.jpg";
-    std::string Path2 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Comprimido/The_Clone_Wars_Logo_Bleu.txt";
-    std::string Path3 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Descomprimido/The_Clone_Wars_Logo_Bleu.jpg";
-    std::string Path4 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Archivo Binario/The_Clone_Wars_Logo_Bleu.bin";
+    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/1.PorComprimir/index.jpeg";
+    std::string Path2 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/3.Comprimido/index.txt";
+    std::string Path3 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/4.Descomprimido/index.jpeg";
+    std::string Path4 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/2.Archivo Binario/index.txt";
+    std::string Path5 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/4.Descomprimido/index.txt";
 
     ImageToBinary(Path1, Path4);
 
@@ -89,19 +96,20 @@ int main(int argc, char *argv[]) {
     decompress(fname_in,fname_out);
 
 
-    cout << "Final de compresión" << endl;
-*/
+    BinaryToImage(Path3,Path5);
+    cout << "terminado" << endl;
 
+    */
 
     //------------------------------------------------------------------------------------------------------------------------------------
     //                                             Ejecución de LZ77
 
     /*
-    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/PorComprimir/index.jpeg";
-    std::string Path2 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Comprimido/index.txt";
-    std::string Path3 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Descomprimido/index.txt";
-    std::string Path4 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Archivo Binario/index.txt";
-    std::string Path5 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/Descomprimido/index.jpeg";
+    std::string Path1 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/1.PorComprimir/index.jpeg";
+    std::string Path2 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/3.Comprimido/index.jpeg";
+    std::string Path3 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/4.Descomprimido/index.jpeg";
+    std::string Path4 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/2.Archivo Binario/index.txt";
+    std::string Path5 = "/home/dylan16/Documents/Datos2/Proyecto03/Proyecto-03-CE-2103/4.Descomprimido/index.jpeg";
 
 
     ImageToBinary(Path1, Path4);
@@ -120,7 +128,6 @@ int main(int argc, char *argv[]) {
 
     BinaryToImage(Path4,Path5);
      */
-
 
 
     return 0;
