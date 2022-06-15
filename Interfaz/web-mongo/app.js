@@ -140,15 +140,14 @@ app.get("/image/:filename", (req, res) => {
 
 // @route DELETE /files/:id
 // @desc  Delete file
-app.delete("/files/:id", (req, res) => {
-  gfs.remove({ _id: req.params.id, root: "uploads" }, (err, gridStore) => {
-    if (err) {
-      return res.status(404).json({ err: err });
-    }
-
-    res.redirect("/");
+exports.deleteFileByFilename = async (req, res, next) => {
+  const file = await gfs.files.findOne({ filename: req.params.filename });
+  const gsfb = new mongoose.mongo.GridFSBucket(conn.db, { bucketName: 'uploads' });
+  gsfb.delete(file._id, function (err, gridStore) {
+    if (err) return next(err);
+    res.status(200).end();
   });
-});
+};
 
 const port = 5000;
 
