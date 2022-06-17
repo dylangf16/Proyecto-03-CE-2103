@@ -6,24 +6,8 @@ import { GoToFilesBtn } from "./GoToFilesBtn.js";
 import logo from './logo.svg';
 import './App.css';
 
-var createGuest = require('cross-domain-storage/guest');
-var createHost = require('cross-domain-storage/host');
-var storageHost = createHost([
-    {
-        origin: 'http://localhost:3000/',
-        allowedMethods: ['get', 'set', 'remove'],
-    },
-    {
-        origin: 'http://localhost:5000/',
-        allowedMethods: ['get'],
-    },
-    ]);
-
 function App() {
-    const {user, isAuthenticated} = useAuth0();
-    // if(isAuthenticated) {
-    //     localStorage.setItem("Username", user.email);
-    // }
+    const {isAuthenticated} = useAuth0();
   return (
     <div className="App">
       <header className="App-header">
