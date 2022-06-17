@@ -1,3 +1,4 @@
+//import React, { useState } from "react";
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -7,7 +8,6 @@ const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage").GridFsStorage;
 const Grid = require("gridfs-stream");
 const methodOverride = require("method-override");
-
 const app = express();
 
 // Middleware
@@ -42,7 +42,10 @@ const storage = new GridFsStorage({
         if (err) {
           return reject(err);
         }
-        const filename = buf.toString("hex") + path.extname(file.originalname);
+
+        const userName = req.body?.email;
+
+        const filename = userName + buf.toString("hex") + path.extname(file.originalname);
         const fileInfo = {
           filename: filename,
           bucketName: "uploads",
@@ -57,10 +60,10 @@ const upload = multer({ storage });
 // @route GET /
 // @desc Loads form
 app.get("/", (req, res) => {
-  gfs.files.find().toArray((err, files) => {
+  gfs?.files.find({ filename: {"$regex" : new RegExp(`^${req.query.user}`) } }).toArray((err, files) => {
     // Check if files
     if (!files || files.length === 0) {
-      res.render("index", { files: false });
+      res.render("index", { files: false, username: req.query.user });
     } else {
       files.map((file) => {
         if (
@@ -72,7 +75,7 @@ app.get("/", (req, res) => {
           file.isImage = false;
         }
       });
-      res.render("index", { files: files });
+      res.render("index", { files: files, username: req.query.user });
     }
   });
 });
@@ -80,8 +83,8 @@ app.get("/", (req, res) => {
 // @route POST /upload
 // @desc  Uploads file to DB
 app.post("/upload", upload.single("file"), (req, res) => {
-  // res.json({ file: req.file });
-  res.redirect("/");
+  //res.json({ file: req.file });
+  res.redirect(`/?user=${req.body.email}`);
 });
 
 // @route GET /files
